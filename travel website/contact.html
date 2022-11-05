@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/073d480906.js" crossorigin="anonymous"></script>
+    <title> HARI TRAVELS | WELCOME</title>
+</head>
+<body>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyCZY7guiAJFT--MVPH7TFUQfrYjy7tu28o",
+          authDomain: "tourism-2020.firebaseapp.com",
+          projectId: "tourism-2020",
+          storageBucket: "tourism-2020.appspot.com",
+          messagingSenderId: "467057844107",
+          appId: "1:467057844107:web:a32760f79ff9e5a3b9598e",
+          measurementId: "G-55K559KP8G"
+        };
+
+        
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        function writeData(){
+            firebase.database().ref("User").set({
+                username: document.getElementById("username").value,
+                email: document.getElementById("email").value,
+                phone: document.getElementById("phone").value,
+                message:document.getElementById("message").value
+                
+
+            });
+        }
+        
+      </script>
+
+    <nav class="navbar bg-dark">
+        <div class="container">
+                <h1 class="logo lg-heading text-light">WT</h1>
+            <ul class="nav-items">
+                <li class="nav-item"><a href="./home.html">Home</a></li>
+                <li class="nav-item"><a href="./about.html">About</a></li>
+                <li class="nav-item"><a href="./contact.html">Contact</a></li>
+            </ul>
+            
+        </div>
+    </nav>
+
+    <section class="contact-form">
+        <div class="container">
+        <div class="form-wrapper">
+        <div class="company-address">
+            <div class="address-group">
+                <i class="fas fa-map-marker-alt fa-3x text-red"></i>
+                <h2 class="text-gray md-heading">Location</h2>
+                <p>
+                    #2661 Shamu Colony, Akot, abc 
+                </p>
+            </div>
+            <div class="address-group">
+                <i class="far fa-envelope fa-3x text-red"></i>
+                <h2 class="text-gray md-heading">Email</h2>
+                <p>
+                    skmangle02@gmail.com
+                </p>
+            </div>
+            <div class="address-group">
+                <i class="fas fa-phone-square fa-3x text-red"></i>
+                <h2 class="text-gray md-heading">Call</h2>
+                <p>
+                    +91999009989
+                </p>
+            </div>
+            <img src="./img/rachel-moenning-zjxYwd4HOu0-unsplash.jpg" alt="Contact">
+        </div>
+        <form action="" class="form">
+            <h1 class="lg-heading text-black">Contact Us</h1>
+            <p class="text-gray">Let us know your questions and concerns by filling out contact form below.</p>
+            <p class="text-red">Required*</p>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text"  placeholder = "Username" name="" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text"  placeholder = "Email" name="" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text"  placeholder = "Phone" name="" id="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="">Message</label>
+                <textarea name=""  placeholder = "Message" id="message" cols="30" rows="10" ></textarea>
+            </div>
+            <button onclick = "writeData()" type="submit" class="form-btn">Submit</button>
+        </form>
+        </div>
+    </div>
+    </section>
+
+    <footer class="footer">
+        <div class="social-media-links">
+            <i class="fab fa-facebook-square fa-4x"></i>
+            <i class="fab fa-twitter fa-4x"></i>
+            <i class="fab fa-instagram fa-4x"></i>
+        </div>
+            <p>World Travel &copy; 2021, All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
